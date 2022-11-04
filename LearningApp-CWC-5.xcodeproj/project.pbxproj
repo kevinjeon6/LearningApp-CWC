@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		74576DC0290EDCDB00A761B4 /* LearningApp_CWC_5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74576DBF290EDCDB00A761B4 /* LearningApp_CWC_5App.swift */; };
-		74576DC2290EDCDB00A761B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74576DC1290EDCDB00A761B4 /* ContentView.swift */; };
+		74576DC2290EDCDB00A761B4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74576DC1290EDCDB00A761B4 /* HomeView.swift */; };
 		74576DC4290EDCE000A761B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74576DC3290EDCE000A761B4 /* Assets.xcassets */; };
 		74576DC7290EDCE000A761B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74576DC6290EDCE000A761B4 /* Preview Assets.xcassets */; };
+		74576DD3290EDEF900A761B4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74576DD2290EDEF900A761B4 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		74576DBC290EDCDB00A761B4 /* LearningApp-CWC-5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LearningApp-CWC-5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74576DBF290EDCDB00A761B4 /* LearningApp_CWC_5App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp_CWC_5App.swift; sourceTree = "<group>"; };
-		74576DC1290EDCDB00A761B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		74576DC1290EDCDB00A761B4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		74576DC3290EDCE000A761B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74576DC6290EDCE000A761B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		74576DD2290EDEF900A761B4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,11 @@
 			isa = PBXGroup;
 			children = (
 				74576DBF290EDCDB00A761B4 /* LearningApp_CWC_5App.swift */,
-				74576DC1290EDCDB00A761B4 /* ContentView.swift */,
+				74576DD1290EDE5E00A761B4 /* Resources */,
+				74576DCE290EDE4700A761B4 /* Models */,
+				74576DD0290EDE5700A761B4 /* Utilities */,
+				74576DCF290EDE5000A761B4 /* ViewModel */,
+				74576DCD290EDE4000A761B4 /* Views */,
 				74576DC3290EDCE000A761B4 /* Assets.xcassets */,
 				74576DC5290EDCE000A761B4 /* Preview Content */,
 			);
@@ -65,6 +71,43 @@
 				74576DC6290EDCE000A761B4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		74576DCD290EDE4000A761B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74576DC1290EDCDB00A761B4 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74576DCE290EDE4700A761B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		74576DCF290EDE5000A761B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				74576DD2290EDEF900A761B4 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		74576DD0290EDE5700A761B4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		74576DD1290EDE5E00A761B4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74576DC2290EDCDB00A761B4 /* ContentView.swift in Sources */,
+				74576DC2290EDCDB00A761B4 /* HomeView.swift in Sources */,
 				74576DC0290EDCDB00A761B4 /* LearningApp_CWC_5App.swift in Sources */,
+				74576DD3290EDEF900A761B4 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
