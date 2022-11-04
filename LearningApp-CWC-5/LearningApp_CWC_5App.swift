@@ -12,6 +12,7 @@ struct LearningApp_CWC_5App: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(ContentViewModel())
         }
     }
 }
