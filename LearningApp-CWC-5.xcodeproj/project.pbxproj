@@ -16,6 +16,8 @@
 		74576DC7290EDCE000A761B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74576DC6290EDCE000A761B4 /* Preview Assets.xcassets */; };
 		74576DD3290EDEF900A761B4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74576DD2290EDEF900A761B4 /* ContentViewModel.swift */; };
 		74B90BB82921B77600AA6C3D /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B90BB72921B77600AA6C3D /* HomeViewRow.swift */; };
+		74B90BD42925C3F700AA6C3D /* ContentLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B90BD32925C3F700AA6C3D /* ContentLessonView.swift */; };
+		74B90BD62925CC2C00AA6C3D /* ContentLessonViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B90BD52925CC2C00AA6C3D /* ContentLessonViewRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		74576DC6290EDCE000A761B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74576DD2290EDEF900A761B4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		74B90BB72921B77600AA6C3D /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
+		74B90BD32925C3F700AA6C3D /* ContentLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLessonView.swift; sourceTree = "<group>"; };
+		74B90BD52925CC2C00AA6C3D /* ContentLessonViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLessonViewRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				74576DC1290EDCDB00A761B4 /* HomeView.swift */,
+				74B90BD32925C3F700AA6C3D /* ContentLessonView.swift */,
+				74B90BD52925CC2C00AA6C3D /* ContentLessonViewRow.swift */,
 				74B90BB72921B77600AA6C3D /* HomeViewRow.swift */,
 			);
 			path = Views;
@@ -194,9 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B90BD42925C3F700AA6C3D /* ContentLessonView.swift in Sources */,
 				74576DC2290EDCDB00A761B4 /* HomeView.swift in Sources */,
 				74B90BB82921B77600AA6C3D /* HomeViewRow.swift in Sources */,
 				74576DC0290EDCDB00A761B4 /* LearningApp_CWC_5App.swift in Sources */,
+				74B90BD62925CC2C00AA6C3D /* ContentLessonViewRow.swift in Sources */,
 				74576DD3290EDEF900A761B4 /* ContentViewModel.swift in Sources */,
 				7421219B2915B8600049058C /* Models.swift in Sources */,
 			);

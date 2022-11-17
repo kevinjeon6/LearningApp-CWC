@@ -11,18 +11,28 @@ import Foundation
 
 class ContentViewModel: ObservableObject {
     
-    //Storing our modules in. Module is an array since the JSON data is surrounded by square brackets
+    //Storing our modules in. Module is an array since the JSON data is surrounded by square brackets. This will be a List of modules
     @Published var modules = [Module]()
+    
+    //Current module
+    @Published var currentModule: Module?
+    var currentModuleIndex = 0
+
     
     
     //Style property. Setting it to an optional Data object
     var styleData: Data?
+    
+    
+    
+    
     
     init() {
         getLocalData()
     }
     
     
+    //MARK: - Data methods
     func getLocalData() {
         //Get URL to JSON file
         let jsonUrl = Bundle.main.url(forResource: "data", withExtension: "json")
@@ -63,5 +73,23 @@ class ContentViewModel: ObservableObject {
     
     
     
+    //MARK: - Module navigation methods
+    
+    func beginModule(_ moduleid: Int) {
+        //Find the index for this module id
+        for index in 0..<modules.count {
+            if modules[index].id == moduleid {
+                
+                //Found the matching module
+                currentModuleIndex = index
+                break
+            }
+        }
+        
+    
+        
+        //Set the current module
+        currentModule = modules[currentModuleIndex]
+    }
     
 }
