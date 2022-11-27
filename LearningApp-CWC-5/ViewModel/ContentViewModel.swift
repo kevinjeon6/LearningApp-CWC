@@ -24,6 +24,9 @@ class ContentViewModel: ObservableObject {
 
     
     
+    //Current lesson explanation
+    @Published var lessonDescription = NSAttributedString()
+    
     //Style property. Setting it to an optional Data object
     var styleData: Data?
     
@@ -107,6 +110,7 @@ class ContentViewModel: ObservableObject {
         
         //Set the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
+        lessonDescription = addStyling(currentLesson!.explanation)
     }
     
     
@@ -127,6 +131,7 @@ class ContentViewModel: ObservableObject {
         if currentLessonIndex < currentModule?.content.lessons.count ?? 0 {
             //Set the current lesson property
             currentLesson = currentModule?.content.lessons[currentLessonIndex]
+            lessonDescription = addStyling(currentLesson!.explanation)
         } else {
             //Reset the lesson state
             currentLesson = nil
@@ -136,4 +141,29 @@ class ContentViewModel: ObservableObject {
      
     }
     
+    
+    //MARK: - Code Styling
+    
+    private func addStyling (_ htmlString: String) -> NSAttributedString {
+        
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        //Add the styling data
+        if styleData != nil {
+            
+            data.append(self.styleData!)
+        }
+        
+        //Add the html data
+        data.append(Data(htmlString.utf8))
+        //Convert to attributed string
+        
+            if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                
+                resultString = attributedString
+            }
+      
+        return resultString
+    }
 }
