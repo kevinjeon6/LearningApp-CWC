@@ -22,6 +22,7 @@
 		74B90BD42925C3F700AA6C3D /* ContentLessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B90BD32925C3F700AA6C3D /* ContentLessonView.swift */; };
 		74B90BD62925CC2C00AA6C3D /* ContentLessonViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B90BD52925CC2C00AA6C3D /* ContentLessonViewRow.swift */; };
 		74CBF7F4292AD0E100BE2111 /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CBF7F3292AD0E000BE2111 /* CodeTextView.swift */; };
+		74F1290C29356E9100F51AE7 /* RectangleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1290B29356E9100F51AE7 /* RectangleCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		74B90BD32925C3F700AA6C3D /* ContentLessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLessonView.swift; sourceTree = "<group>"; };
 		74B90BD52925CC2C00AA6C3D /* ContentLessonViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLessonViewRow.swift; sourceTree = "<group>"; };
 		74CBF7F3292AD0E000BE2111 /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
+		74F1290B29356E9100F51AE7 /* RectangleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				74B90BD52925CC2C00AA6C3D /* ContentLessonViewRow.swift */,
 				74B90BB72921B77600AA6C3D /* HomeViewRow.swift */,
 				749EF05B2926F34300E6AECF /* ContentDetailView.swift */,
+				74F1290B29356E9100F51AE7 /* RectangleCardView.swift */,
 				74CBF7F3292AD0E000BE2111 /* CodeTextView.swift */,
 			);
 			path = Views;
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F1290C29356E9100F51AE7 /* RectangleCardView.swift in Sources */,
 				74B90BD42925C3F700AA6C3D /* ContentLessonView.swift in Sources */,
 				74576DC2290EDCDB00A761B4 /* HomeView.swift in Sources */,
 				74B90BB82921B77600AA6C3D /* HomeViewRow.swift in Sources */,

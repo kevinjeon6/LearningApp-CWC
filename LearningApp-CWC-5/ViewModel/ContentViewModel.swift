@@ -30,7 +30,8 @@ class ContentViewModel: ObservableObject {
     //Style property. Setting it to an optional Data object
     var styleData: Data?
     
-    
+    //Current selected content and test
+    @Published var currentContentSelected: Int?
     
     
     

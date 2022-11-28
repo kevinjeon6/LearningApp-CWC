@@ -29,19 +29,22 @@ struct HomeView: View {
                                 
                                 NavigationLink(destination: ContentLessonView()
                                     .onAppear(perform: {
-                                        model.beginModule(module.id)
-                                    }),
+                                    model.beginModule(module.id)
+                                }),
+                                    tag: module.id,
+                                    selection: $model.currentContentSelected,
                                     label: {
-                                    
-                                    //MARK: - Learning Card
-                                    HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)})
+                                    HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
+                                })
+                                
                                 
                                 NavigationLink {
                                     ContentLessonView()
                                         .onAppear {
                                             model.beginModule(module.id)
                                         }
-                                } label: {
+                                }
+                            label: {
                                     //MARK: - Learning Card
                                     HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
                                 }
