@@ -43,7 +43,8 @@ struct ContentDetailView: View {
                     
                     ZStack {
                   
-                        
+                        RectangleCardView(color: .green)
+                            .frame(height: 48)
                         
                         
                         Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
@@ -62,6 +63,7 @@ struct ContentDetailView: View {
                     
                     ZStack {
                         RectangleCardView(color: .green)
+                            .frame(height: 48)
                         
                         
                         
