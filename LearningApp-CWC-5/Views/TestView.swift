@@ -15,6 +15,25 @@ struct TestView: View {
     @State var numCorrect = 0
     @State var submitted = false
     
+    var buttonText: String {
+        //Check if answer has been submitted
+        if submitted  {
+            //The += 1 is because the array starts at 0 index.
+            if model.currentQuestionIndex += 1 == model.currentModule!.test.questions.count {
+                //This is the last question
+                return "Finish"
+            } else {
+                //There is a next question
+                return "Next"
+            }
+            
+            
+            
+        }  else {
+            return "Submit"
+        }
+    }
+    
     var body: some View {
         if model.currentQuestion != nil {
             VStack (alignment: .leading) {
@@ -72,21 +91,36 @@ struct TestView: View {
                     .padding()
                 }
                 
-                //Submit Button
+               //MARK: - Submit button
                 Button {
-                    //Change submitted button to true
-                    submitted = true
                     
-                    //Check the answer and increment the counter if correct
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-                        numCorrect += 1
+                    //Check if answer has been submitted
+                    
+                    if submitted {
+                        //Answer has already been submitted, move to next question
+                        model.nextQuestion()
+                        
+                        //Reset properties
+                        submitted = false
+                        selectedAnswerIndex = nil
+                    } else {
+                        //Submit the answer
+                        //Change submitted button to true
+                        submitted = true
+                        
+                        //Check the answer and increment the counter if correct
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            numCorrect += 1
+                        }
                     }
+                    
+                  
                 } label: {
                     ZStack {
                         RectangleCardView(color: .green)
-                        Text("Submit")
+                            .frame(height: 48)
+                        Text(buttonText)
                             .bold()
-                           
                             .foregroundColor(.white)
                         
                     }
