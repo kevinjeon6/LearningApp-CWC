@@ -19,7 +19,7 @@ struct TestView: View {
         //Check if answer has been submitted
         if submitted  {
             //The += 1 is because the array starts at 0 index.
-            if model.currentQuestionIndex += 1 == model.currentModule!.test.questions.count {
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
                 //This is the last question
                 return "Finish"
             } else {
@@ -35,6 +35,7 @@ struct TestView: View {
     }
     
     var body: some View {
+        
         if model.currentQuestion != nil {
             VStack (alignment: .leading) {
                 //Question number. We add one because the index starts at 0 but we dont want to display 0 of 10 for the first question
@@ -58,6 +59,7 @@ struct TestView: View {
                                         if submitted == false {
                                             RectangleCardView(color: index == selectedAnswerIndex ? .gray : .white)
                                                 .frame(height: 48)
+                                                
                                         } else {
                                             //Answer has been submitted
                                             if index == selectedAnswerIndex && index == model.currentQuestion?.correctIndex {
@@ -136,7 +138,7 @@ struct TestView: View {
         }
         else {
             //Test hasn't loaded yet
-            ProgressView()
+            ResultsView(numCorrect: numCorrect)
         }
     }
 }
