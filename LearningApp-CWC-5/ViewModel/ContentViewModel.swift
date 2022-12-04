@@ -124,9 +124,12 @@ class ContentViewModel: ObservableObject {
                //Decode
               let modules = try decoder.decode([Module].self, from: data!)
                
-               //Append parsed modules into modules property
-               
-               self.modules += modules
+             
+               DispatchQueue.main.async {
+                   //DispatchQueue assigns it to the main thread. So the background thread isn't going to try to update the UI
+                   //Append parsed modules into modules property
+                   self.modules += modules
+               }
            } catch {
                //Couldn't parse the JOSN
            }
