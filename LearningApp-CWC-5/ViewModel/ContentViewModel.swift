@@ -43,7 +43,11 @@ class ContentViewModel: ObservableObject {
     
     
     init() {
+        
+        //Local data will be parsed first, followed by remote data
         getLocalData()
+        
+        getRemoteData()
     }
     
     
@@ -61,10 +65,10 @@ class ContentViewModel: ObservableObject {
             let jsonDecoder = JSONDecoder()
             
             
-           var modules = try jsonDecoder.decode([Module].self, from: jsonData)
+           let modules = try jsonDecoder.decode([Module].self, from: jsonData)
             
             //Assign parsed modules to modules property
-            self.modules = modules
+            self.modules += modules
             
         } catch {
             print("Couldn't parse local data")
@@ -87,6 +91,52 @@ class ContentViewModel: ObservableObject {
     }
     
     
+    
+    //MARK: - Remote data method
+    func getRemoteData() {
+        guard let url = URL(string: "https://kevinjeon6.github.io/learningapp-data-cwc/data2.json") else {
+            fatalError("Bad URL")
+        }
+        
+        //Create a URL request object
+        
+        let request = URLRequest(url: url)
+        
+        
+        //Get the session and kick off the task
+        
+        let session = URLSession.shared
+        
+        //data parameter is the data coming back from the request
+        //response is going to contain additional information about the response just in case you need to check the status code
+        //error contains any errors that happen
+       let dataTask = session.dataTask(with: request) { data, response, error in
+            
+            //Check if there's an error. If error is nil that means there is no error
+           guard error == nil else {
+               //There was an error
+               return
+           }
+            
+           do {
+               //Create json decoder
+               let decoder = JSONDecoder()
+               //Decode
+              let modules = try decoder.decode([Module].self, from: data!)
+               
+               //Append parsed modules into modules property
+               
+               self.modules += modules
+           } catch {
+               //Couldn't parse the JOSN
+           }
+           
+        }
+        //Kick off the dataTask. Need to call the resume method
+        dataTask.resume()
+    
+        
+    }
     
     //MARK: - Module navigation methods
     
